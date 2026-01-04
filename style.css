@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f4f7;
+  padding: 20px;
+}
+
+.form-bg {
+  background: #f2f4f7;
+}
+
+.container {
+  background: #ffffff;
+  padding: 25px;
+  max-width: 700px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form structure */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Row layout */
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+.row > div {
+  flex: 1;
+}
+
+/* Inline (radio / checkbox) */
+.inline label {
+  margin-right: 15px;
+  font-weight: normal;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 10px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #256a28;
+}
+
+.secondary {
+  background: #1976d2;
+  margin-top: 10px;
+}
+
+.small-btn {
+  width: auto;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 20px;
+}
+/* ===== DATA PAGE STYLES ===== */
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.top-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.chip {
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 20px;
+  width: auto;
+}
+
+.back-btn {
+  margin-top: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th {
+  background: #f0f2f5;
+  font-weight: 600;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
+tr:hover {
+  background: #f9fbfd;
+}
+
+.delete-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #e53935;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #c62828;
+}
+
+.empty {
+  padding: 20px;
+  font-style: italic;
+  color: #777;
+}

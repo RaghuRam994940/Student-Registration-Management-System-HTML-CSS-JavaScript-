@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Records</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container wide">
+  <h2>Student Registration Records</h2>
+
+  <div class="top-actions">
+    <button class="chip secondary" onclick="loadData()">Refresh</button>
+    <button class="chip danger" onclick="clearAll()">Clear All</button>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Roll</th>
+          <th>Name</th>
+          <th>Father</th>
+          <th>DOB</th>
+          <th>Mobile</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Department</th>
+          <th>Courses</th>
+          <th>City</th>
+          <th>❌</th>
+        </tr>
+      </thead>
+      <tbody id="table"></tbody>
+    </table>
+  </div>
+
+  <button class="chip back-btn" onclick="location.href='index.html'">
+    ← Back to Form
+  </button>
+</div>
+
+<script>
+const table = document.getElementById("table");
+
+function loadData() {
+  const data = JSON.parse(localStorage.getItem("students") || "[]");
+  table.innerHTML = "";
+
+  if (data.length === 0) {
+    table.innerHTML = `
+      <tr>
+        <td colspan="11" class="empty">No student records found</td>
+      </tr>`;
+    return;
+  }
+
+  data.forEach(s => {
+    table.innerHTML += `
+      <tr>
+        <td>${s.roll}</td>
+        <td>${s.firstName} ${s.lastName}</td>
+        <td>${s.father}</td>
+        <td>${s.dob}</td>
+        <td>${s.mobile}</td>
+        <td>${s.email}</td>
+        <td>${s.gender}</td>
+        <td>${s.department}</td>
+        <td>${s.courses}</td>
+        <td>${s.city}</td>
+        <td>
+          <button class="delete-btn" onclick="del(${s.id})">✕</button>
+        </td>
+      </tr>`;
+  });
+}
+
+function del(id) {
+  let data = JSON.parse(localStorage.getItem("students") || "[]");
+  data = data.filter(s => s.id !== id);
+  localStorage.setItem("students", JSON.stringify(data));
+  loadData();
+}
+
+function clearAll() {
+  if (confirm("Delete all student records?")) {
+    localStorage.removeItem("students");
+    loadData();
+  }
+}
+
+loadData();
+</script>
+
+</body>
+</html>
