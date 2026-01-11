@@ -164,6 +164,15 @@ tr:hover {
  color: #dc2626;
  border: 1px solid #fecaca;
   cursor: pointer;
+  /* THIS ALIGNS THE SYMBOL */
+  display: inline-flex;
+  align-items: center;    /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;         /* Prevents extra spacing from font height */
+  padding: 0;             /* Removes default button padding */
 }
 
 .delete-btn:hover {
