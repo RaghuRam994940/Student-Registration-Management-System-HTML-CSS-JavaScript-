@@ -89,6 +89,24 @@ button:hover {
   font-size: 13px;
   border-radius: 20px;
 }
+.form-group.inline {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.form-group.inline label:first-child {
+  min-width: 100px; /* keeps label aligned */
+  font-weight: bold;
+}
+
+.form-group.inline label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
 /* ===== DATA PAGE STYLES ===== */
 
 .table-wrapper {
@@ -154,3 +172,4 @@ tr:hover {
   font-style: italic;
   color: #777;
 }
+
